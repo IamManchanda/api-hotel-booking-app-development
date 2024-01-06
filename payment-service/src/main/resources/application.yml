@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:mysql://sweet-home-database.cimib5bfddhg.us-east-1.rds.amazonaws.com/payment-service-db?createDatabaseIfNotExist=true
+    username: admin
+    password: DmHQfDhChM3DCbObaNry
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  application:
+    name: PAYMENT-SERVICE
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  
+  instance:
+    hostname: localhost
